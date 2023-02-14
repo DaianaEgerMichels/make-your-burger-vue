@@ -3,8 +3,8 @@
     <router-link to="/" id="logo-url">
       <img :src="logo" :alt="alt" id="logo" />
     </router-link>
-    <router-link to="/"><a>Fazer Pedido</a></router-link>
-    <router-link to="/pedidos"><a>Pedidos</a></router-link>
+    <router-link to="/"><a>Make a Wish</a></router-link>
+    <router-link to="/pedidos"><a>Requests</a></router-link>
   </div>
 </template>
 

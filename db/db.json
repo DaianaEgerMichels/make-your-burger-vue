@@ -78,5 +78,12 @@
     }
   ],
   "burgers": [
+    {
+      "nameClient": "Pipoca",
+      "meat": "Picanha",
+      "bread": "Integral",
+      "status": "Requested",
+      "id": 1
+    }
   ]
 }

@@ -1,6 +1,6 @@
 <template>
   <footer id="footer">
-    <p>Make You Burger &copy; 2022</p>
+    <p>Make You Burger &copy; 2023</p>
   </footer>
 </template>
 

@@ -71,7 +71,7 @@ export default {
           meat: this.meat,
           bread: this.bread,
           optionals: Array.from(this.optionals),
-          status: "Requested"
+          status: "Solicitado"
         }
 
         const dataJson = JSON.stringify(data);

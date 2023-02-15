@@ -10,21 +10,21 @@
                 <div class="input-container">
                     <label for="bread">Choose the Type of Bread:</label>
                     <select id="bread" name="bread" v-model="bread">
-                        <option value="">Select the Bread</option>
+                        <option disabled value="">Select the Bread</option>
                         <option v-for="bread in breads" :key="bread.id" :value="bread.tipo">{{bread.tipo}}</option>
                     </select>
                 </div>
                 <div class="input-container">
                     <label for="meat">Choose the Type of Meat:</label>
                     <select id="meat" name="meat" v-model="meat">
-                        <option value="">Select the Meat</option>
+                        <option disabled value="">Select the Meat</option>
                         <option v-for="meat in meats" :key="meat.id" :value="meat.tipo">{{meat.tipo}}</option>
                     </select>
                 </div>
                 <div id="options-container" class="input-container">
-                    <label id="options-title" for="options">Select the Options:</label>
+                    <label id="options-title" for="optionals">Select the Options:</label>
                     <div class="checkbox-container" v-for="optional in optionalsdata" :key="optional.id">
-                        <input type="checkbox" name="options" v-model="options" :value="optional.tipo">
+                        <input type="checkbox" name="options" v-model="optionals" :value="optional.tipo">
                         <span>{{optional.tipo}}</span>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ export default {
         nameClient: null,
         bread: null,
         meat: null,
-        options: [],
+        optionals: [],
         msg: null
       }
     },
@@ -70,7 +70,7 @@ export default {
           nameClient: this.nameClient,
           meat: this.meat,
           bread: this.bread,
-          optionals: this.optionals,
+          optionals: Array.from(this.optionals),
           status: "Requested"
         }
 
@@ -92,7 +92,7 @@ export default {
         this.nameClient = "";
         this.meat = "";
         this.bread = "";
-        this.options = "";
+        this.optionals = [];
       }
     },
     mounted(){

@@ -80,8 +80,12 @@
   "burgers": [
     {
       "nameClient": "Pipoca",
-      "meat": "Picanha",
+      "meat": "Veggie burger",
       "bread": "Integral",
+      "optionals": [
+        "Cebola roxa",
+        "Tomate"
+      ],
       "status": "Requested",
       "id": 1
     }

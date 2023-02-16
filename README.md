@@ -1,11 +1,11 @@
 ## MAKE YOUR BURGER
 
-<p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
-</p>
 
 ## Home Page: 
 <img src="public/img/home-page.png" alt="home-page"/>
+
+## Requests Page:
+<img src="public/img/requests-page.png" alt="requests-page"/>
 
 ## Project setup
 ```

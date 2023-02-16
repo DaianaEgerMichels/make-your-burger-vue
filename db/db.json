@@ -79,15 +79,17 @@
   ],
   "burgers": [
     {
-      "nameClient": "Pipoca",
-      "meat": "Veggie burger",
-      "bread": "Integral",
+      "nameClient": "Christoffer ",
+      "meat": "Alcatra",
+      "bread": "Parmesão e Orégano",
       "optionals": [
-        "Cebola roxa",
-        "Tomate"
+        "Bacon",
+        "Tomate",
+        "Cheddar",
+        "Pepino"
       ],
       "status": "Solicitado",
-      "id": 1
+      "id": 2
     }
   ]
 }

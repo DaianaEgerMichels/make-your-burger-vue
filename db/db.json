@@ -88,8 +88,20 @@
         "Cheddar",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 2
+    },
+    {
+      "nameClient": "Pipoca",
+      "meat": "Picanha",
+      "bread": "Integral",
+      "optionals": [
+        "Bacon",
+        "Tomate",
+        "Cheddar"
+      ],
+      "status": "Solicitado",
+      "id": 3
     }
   ]
 }

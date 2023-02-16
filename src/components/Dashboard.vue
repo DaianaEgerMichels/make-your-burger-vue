@@ -1,5 +1,6 @@
 <template>
     <div id="burger-table">
+        <Message :msg="msg" v-show="msg"/>
         <div>
             <div id="burger-table-heading">
                 <div class="order-id">
@@ -36,46 +37,57 @@
 </template>
 
 <script>
-    export default {
-        name: "Dashboard",
-        data() {
-            return {
-                burgers: null,
-                burger_id: null,
-                status: []
-            }
-        },
-        methods: {
-            async getRequests() {
-                const req = await fetch("http://localhost:3000/burgers");
-                const data = await req.json();
-                this.burgers = data;
-
-                this.getStatus();
-            },
-            async getStatus() {
-                const req = await fetch("http://localhost:3000/status");
-                const data = await req.json();
-                this.status = data;
-            },
-            async deleteBurger(id) {
-                const req = await fetch(`http://localhost:3000/burgers/${id}`, { method: 'DELETE' });
-
-                const res = await req.json();
-                this.getRequests();
-            },
-            async updatedBurger (event, id) {
-                const option = event.target.value;
-                const dataJson = JSON.stringify({ status: option });
-                const req = await fetch(`http://localhost:3000/burgers/${id}`, {method: 'PATCH', headers: {'Content-Type':'application/json'}, body: dataJson});
-                const res = await req.json();
-                console.log(res);
-            }
-        },
-        mounted() {
-            this.getRequests();
+import Message from './Message.vue';
+export default {
+    name: "Dashboard",
+    components: {Message},
+    data() {
+        return {
+            burgers: null,
+            burger_id: null,
+            status: [],
+            msg: ''
         }
+    },
+    methods: {
+        async getRequests() {
+            const req = await fetch("http://localhost:3000/burgers");
+            const data = await req.json();
+            this.burgers = data;
+
+            this.getStatus();
+        },
+        async getStatus() {
+            const req = await fetch("http://localhost:3000/status");
+            const data = await req.json();
+            this.status = data;
+        },
+        async deleteBurger(id) {
+            const req = await fetch(`http://localhost:3000/burgers/${id}`, { method: 'DELETE' });
+
+            const res = await req.json();
+            this.msg = `Delete successfully`;
+
+            setTimeout(() => this.msg = "", 3000);
+
+            this.getRequests();
+        },
+        async updatedBurger (event, id) {
+            const option = event.target.value;
+            const dataJson = JSON.stringify({ status: option });
+            const req = await fetch(`http://localhost:3000/burgers/${id}`, {method: 'PATCH', headers: {'Content-Type':'application/json'}, body: dataJson});
+            const res = await req.json();
+
+            this.msg = `Request Nº ${res.id} updated ${res.status}`;
+
+            setTimeout(() => this.msg = "", 3000);
+            console.log(res);
+        }
+    },
+    mounted() {
+        this.getRequests();
     }
+}
 </script>
 
 <style scoped>
